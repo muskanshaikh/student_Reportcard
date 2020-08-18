@@ -134,6 +134,9 @@ input{
 }
 
 @media only screen and (max-width:720px) {
+	body{
+		margin:5px;
+	}
 	.std_info{
 		width:100%;
 	}
@@ -152,5 +155,17 @@ input{
 }
 	.tbl2{
 		width: 100%;
+		max-height: fit-content;
+		max-width: fit-content;
+	}
+	
+
+	#sub1{
+		display: block;
+		width: 100%;
+	}
+	#marks1{
+		display: block;
+		width:100%;
 	}
 }

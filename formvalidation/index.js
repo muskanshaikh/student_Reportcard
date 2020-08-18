@@ -197,7 +197,7 @@ function deleterow(o){
  let sumvalue=document.querySelectorAll('input[name="txtaccount"]')[1].value;
  
 calcvalue=sum-sumvalue;
-
+console.log(calcvalue);
  newgrade(calcvalue);
 
     
