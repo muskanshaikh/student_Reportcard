@@ -9,6 +9,7 @@
   <body>
 
       <div class="container">
+       
         <h2>Student -Report Card</h2>
 <!--Student information -->
         <fieldset>
@@ -18,12 +19,18 @@
              <tr class="responsive">
               <td>Name:</td><td><input type="text" name="txtname" id="name"   minlength="3" maxlength="20"  placeholder="enter your name" required  /> </td>              
               <td>&nbsp;Rollno:</td><td><input type="text" name="txtrollno" id="rollno"  placeholder="enter rollno" required /> </td>              
-              <td>&nbsp;Class:</td><td><input type="text" name="txtfame" placeholder="Class"  required maxlength="2"  pattern="\d*"/></td>
+              <td>&nbsp;Class:</td><td><input type="text" name="txtfame" placeholder="Class"  id="class" required maxlength="2"  pattern="\d*"/></td>
              </tr>
              <tr class="responsive">
-              <td>Institute Name:</td><td><input type="text" name="txtinstitute" placeholder="enter institute name" required /></td>
-              <td>&nbsp;Batch:</td><td><input type="text" name="txtbatch"  placeholder="enter batch" maxlength="3"  pattern="\d*" required/></td>
-              <td>&nbsp;Academic Year:</td><td><input type="text" name="txtyear" placeholder="enter  academic year" pattern="\d*" maxlength="4" required/></td>
+              <td>Institute Name:</td><td><input type="text" name="txtinstitute" placeholder="enter institute name" required  id="college"/></td>
+              <td>&nbsp;University:</td><td><select name="txtuniversity" id="University" class="box">
+               <option value="_______" selected>--------</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Delhi">Pune</option>
+                <option value="Delhi">Kolkata</option>
+              </select> </td>
+              <td>&nbsp;Academic Year:</td><td><input  id="academic" type="text" name="txtyear" placeholder="enter  academic year"  pattern="\d*" required maxlength="4" /></td>
              </tr>
             </table>
            </fieldset>
@@ -57,6 +64,7 @@
         <button id="submit">Submit</button>
       
       </form>
+      <hr>
       <!--Display of student details if student is below 35 marks the row will be red-->
       <div class="std_info" id="displaygrade">
         <div class="newtb">
@@ -77,7 +85,7 @@
           <td width="135">Institute Name:</td><td><font face="arial" id="inst_name"></font></td>
          </tr>
          <tr>
-          <td width="135">Batch:</td><td><font face="arial" id="batch"></font></td>
+          <td width="135">University:</td><td><font face="arial" id="uni"></font></td>
          </tr><tr>
           <td width="135">Year:</td><td><font face="arial" id="year"></font></td>
          </tr>
@@ -89,7 +97,7 @@
            <table id="tbl" border="1" >
            <tr>
 
-            <td width="135">Subject Id</td>   <td width="135">Subject Name</td><td>Subject Marks</td>
+              <td width="135">Subject Name</td><td>Subject Marks</td>
              </tr>
               </table>
          <table border="1">

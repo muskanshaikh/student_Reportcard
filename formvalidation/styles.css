@@ -1,8 +1,9 @@
 * {
 	box-sizing: border-box;
 }
-body {
-	background-color: #9b59b6;
+body { 
+	
+	background: linear-gradient(90deg, rgb(31, 43, 224), lightcoral);background-color: #9b59b6;
 	font-family: 'Open Sans', sans-serif;
 	display: flex;
 	align-items: center;
@@ -14,6 +15,19 @@ body {
 h2{
 	text-align: center;
 }
+.box {
+	width: 194px;
+	height: 35px;
+	border: 2px solid black;
+	font-size: 18px;
+
+	color: black;
+	background-color:white;
+	border-radius: 5px;
+	box-shadow: 4px 4px #ccc;
+  }
+
+ 
 
 .container {
 	background-color: #fff;
@@ -24,7 +38,11 @@ h2{
     max-width: 100%;
 	padding: 20px;
 	
+
+	
 }
+
+
 #form {
 	padding: 30px 40px;	
 }
@@ -40,6 +58,7 @@ input{
 	
 
 }
+
 
 #submit {
 	background-color: #8e44ad;

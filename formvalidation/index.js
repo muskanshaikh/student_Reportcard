@@ -1,8 +1,11 @@
 const form = document.getElementById('form');
 const name = document.getElementById('name');
 const rollno = document.getElementById('rollno');
+const academic=document.getElementById("academic");
 const letters = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
 var numbers = /^[A-Za-z]{4}\d{5}$/;
+
+
 
 form.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -11,11 +14,17 @@ form.addEventListener('submit', (e) => {
     myfunction();
   }
 });
+
+
+ 
+
 var sum = 0;
 function checkInputs() {
   // trim to remove the whitespaces
   const nameValue = name.value.trim();
   const rollnovalue = rollno.value.trim();
+ const academicvalue=academic.value.trim();
+ var _thisYear = new Date().getFullYear();
   if (nameValue === '') {
     alert('name cannot be blank');
     name.focus();
@@ -43,14 +52,23 @@ function checkInputs() {
     return false;
   }
   if (!rollnovalue.match(numbers)) {
+    rollno.focus();
     alert('please enter rollno in this format: COEP23456');
     return false;
   }
 
-  if (rollno.length < 9) {
+  if (!rollno.length > 9) {
+    rollno.focus();
     alert('please enter rollno in this format: COEP23456');
     return false;
   }
+
+  if (parseInt(academicvalue) > _thisYear || parseInt(academicvalue) < 1900){
+   academic.focus();
+    alert('please enter year ');
+    return false;
+  }
+  
 
   return true;
 }
@@ -67,10 +85,16 @@ function myfunction() {
   var c = document.form1.txtinstitute.value;
 
   document.getElementById('inst_name').innerHTML = c;
-  var d = document.form1.txtbatch.value;
-  document.getElementById('batch').innerHTML = d;
+  var d = document.form1.txtuniversity.value;
+  document.getElementById('uni').innerHTML = d;
   var y = document.form1.txtyear.value;
   document.getElementById('year').innerHTML = y;
+
+  document.getElementById('name').value = '';
+  document.getElementById('rollno').value = '';
+  document.getElementById('college').value = '';
+document.getElementById('class').value = '';
+document.getElementById('academic').value = '';
 }
 
 
@@ -108,7 +132,19 @@ function duplicate() {
   
   var selectedmarks=document.getElementById("outofmarks");
   var opt=selectedmarks.value;
-  
+  if(opt=="50"){
+    if(marks>50){
+      alert("please enter marks inside 50");
+      return false;
+    }
+  }
+
+  if(opt=="100"){
+    if(marks>100){
+      alert("please enter marks inside 50");
+      return false;
+    }
+  }
   var parentDiv = document.getElementById('tbl2');
 
   var childDiv = document.createElement('tr'); // create child div on the fly
@@ -147,7 +183,7 @@ function calcsum(markslast) {
     var opt=selectedmarks.value;
 
      newopt=parseInt(opt)+newopt;
-    console.log(newopt)
+    console.log(newopt);
    
   // var txt2 = eval(parseFloat(txt1 * opt) / ((room - 1) * 100));
   var txt2 = eval(parseFloat((txt1*100) /newopt));
@@ -173,16 +209,14 @@ function calcsum(markslast) {
     }
   }
   
-  var i = 1;
+  
   function updatetable(lastchild, markslast) {
     var parent = document.getElementById('tbl');
     var childdiv = document.createElement('tr'); // create child div on the fly
   
     childdiv.innerHTML =
       '' +
-      ' <td width="135">' +
-      'Subj' +
-      i +
+      
       '</td> ' +
       '<td width="135" height="30">' +
       '<font face="arial" id="subjectname">' +
@@ -194,7 +228,7 @@ function calcsum(markslast) {
       markslast +
       '</font>' +
       '</td>';
-    i++;
+
     parent.appendChild(childdiv);
     if (markslast < 35) {
       childdiv.style.background = 'red';
@@ -237,8 +271,10 @@ function deleterow(o) {
   //console.log(row.children[1].children[0].value);
   let delrow = row.children[1].children[0].value;
 
-  let diffvalue = sum - delrow;
+  let diffvalue = parseInt(sum) - parseInt(delrow);
   console.log(diffvalue);
+  sum=diffvalue;
+  
 
   document.getElementById('total').innerHTML = diffvalue;
   var selectedmarks=document.getElementById("outofmarks");
