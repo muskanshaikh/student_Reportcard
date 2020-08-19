@@ -42,11 +42,8 @@ function checkInputs() {
     const rollnovalue = rollno.value.trim();
 
   
-    var b = document.form1.txtfame.value.trim();
-   if(!b.match(letters)){
-    alert("Please enter alphanumeric characters only");
-    return false;
-   }
+  
+  
 
     
     if(nameValue === '') {
