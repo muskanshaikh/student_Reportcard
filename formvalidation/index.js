@@ -241,9 +241,10 @@ function deleterow(o) {
   console.log(diffvalue);
 
   document.getElementById('total').innerHTML = diffvalue;
-
+  var selectedmarks=document.getElementById("outofmarks");
+  var opt=selectedmarks.value;
   var txt2 = eval(
-    parseFloat(diffvalue * 100) / ((room - 1 - deletecount) * 100));
+    parseFloat(diffvalue * 100) / ((room - 1 - deletecount) * opt));
   document.getElementById('percent').innerHTML = txt2.toFixed(2) + '%';
 
   switch (true) {
