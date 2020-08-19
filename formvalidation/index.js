@@ -150,7 +150,7 @@ function deleterow(o){
     //tbl.deleteRow(o.parentNode.parentNode.rowIndex);
     var row = o.parentNode.parentNode;
     var subname = row.getElementsByTagName("td")[0].innerHTML;
-    if (confirm("Do you want to delete: " + subname)) {
+    
 
         //Get the reference of the Table.
         var table = document.getElementById("tbl");
@@ -158,7 +158,7 @@ function deleterow(o){
         //Delete the Table row using it's Index.
         table.deleteRow(row.rowIndex);
         deletecount++;
-    }
+    
     console.log(row.children[1].children[0].value);
     let delrow=row.children[1].children[0].value;
   

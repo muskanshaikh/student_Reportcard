@@ -22,8 +22,8 @@
              </tr>
              <tr class="responsive">
               <td>Institute Name:</td><td><input type="text" name="txtinstitute" placeholder="enter institute name" required /></td>
-              <td>&nbsp; &nbsp; Batch:</td><td><input type="number" name="txtbatch"  placeholder="enter batch" minlength="1" maxlength="3" required/></td>
-              <td>&nbsp; &nbsp; Academic Year:</td><td><input type="number" name="txtyear" placeholder="enter  academic year" required/></td>
+              <td>&nbsp; &nbsp; Batch:</td><td><input type="text" name="txtbatch"  placeholder="enter batch" maxlength="3"  pattern="\d*" required/></td>
+              <td>&nbsp; &nbsp; Academic Year:</td><td><input type="text" name="txtyear" placeholder="enter  academic year" pattern="\d*" maxlength="4" required/></td>
              </tr>
             </table>
            </fieldset>
