@@ -5,8 +5,6 @@ const academic=document.getElementById("academic");
 const letters = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
 var numbers = /^[A-Za-z]{4}\d{5}$/;
 
-
-
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -14,9 +12,6 @@ form.addEventListener('submit', (e) => {
     myfunction();
   }
 });
-
-
- 
 
 var sum = 0;
 function checkInputs() {
@@ -102,6 +97,7 @@ var information = [];
 var insert = 0;
 
 var room = 1;
+/*For adding subject in  new row*/
 function duplicate() {
   var marks = document.getElementById('marks1').value;
   var subject = document.getElementById('sub1').value;
@@ -174,6 +170,8 @@ function duplicate() {
   document.getElementById('sub1').value = '';
 }
 var newopt=0;
+
+/*Calculating sum*/
 function calcsum(markslast) {
     sum = parseFloat(sum) + parseFloat(markslast);
     var txt1 = eval(parseFloat(sum));
@@ -209,7 +207,7 @@ function calcsum(markslast) {
     }
   }
   
-  
+  /*For displaying report card in table */
   function updatetable(lastchild, markslast) {
     var parent = document.getElementById('tbl');
     var childdiv = document.createElement('tr'); // create child div on the fly
@@ -250,14 +248,13 @@ function calcsum(markslast) {
     var p = o.parentNode.parentNode;
     p.parentNode.removeChild(p);
   }
+
+
+
 var deletecount = 0;
 
 function deleterow(o) {
-  // var p=o.parentNode.parentNode;
-  //p.parentNode.removeChild(p);
-
-  //var tbl = document.getElementById('tbl');
-  //tbl.deleteRow(o.parentNode.parentNode.rowIndex);
+ 
   var row = o.parentNode.parentNode;
   var subname = row.getElementsByTagName('td')[0].innerHTML;
 
