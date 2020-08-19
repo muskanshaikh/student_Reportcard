@@ -21,6 +21,17 @@ function checkInputs() {
     name.focus();
     return false;
   }
+  if(name.length>20){
+    alert('name cannot be more than 20 words');
+    name.focus();
+    return false; 
+  }
+
+  if(name.length<3){
+    alert('name cannot be less than 3 words');
+    name.focus();
+    return false; 
+  }
 
   if (!nameValue.match(letters)) {
     alert('Please enter alphanumeric characters only');
