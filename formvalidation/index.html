@@ -40,7 +40,11 @@
             <table  id="tbl2">
              <tr id="clonerow" class="responsive" >
               <td width="140" id="subname" ><input type="text" placeholder="enter subject name" id="sub1"  value="" /></td><td id="marks"><input type="text" name="txtaccount"  maxlength="2" size="10" id="marks1"  placeholder=" marks " value="" />
-              &nbsp;Out of 100 &nbsp;&nbsp; <button type="button" onclick="duplicate()" id="add">Add More Subject</button>
+              &nbsp;Out of <select name="outof" id="outofmarks">
+               
+                <option value="100">100</option>
+                <option value="50">50</option>
+              </select> &nbsp;&nbsp; <button type="button" onclick="duplicate()" id="add">Add More Subject</button>
               
              
              </tr>

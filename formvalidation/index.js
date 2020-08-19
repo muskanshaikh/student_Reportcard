@@ -76,6 +76,7 @@ function myfunction() {
 
 var information = [];
 var insert = 0;
+
 var room = 1;
 function duplicate() {
   var marks = document.getElementById('marks1').value;
@@ -104,10 +105,15 @@ function duplicate() {
   var e = document.form1.txtrollno.value;
 
   room++;
-
+  
+  var selectedmarks=document.getElementById("outofmarks");
+  var opt=selectedmarks.value;
+  
   var parentDiv = document.getElementById('tbl2');
+
   var childDiv = document.createElement('tr'); // create child div on the fly
   childDiv.setAttribute('class', 'removeclass' + room);
+
   childDiv.innerHTML =
     '' +
     ' <td width="140" id="subname" >' +
@@ -119,7 +125,7 @@ function duplicate() {
     '<input type="text" name="txtaccount" maxlength="2" size="10" id="marks1" placeholder="marks" disabled="disabled" value="' +
     marks +
     '"/>' +
-    '&nbsp;Out of 100 &nbsp;&nbsp;' +
+    '&nbsp;Out of '+opt+' &nbsp;&nbsp;' +
     '<button type="button" name="reset" onclick="deleterow(this)" id="add">' +
     'Delete' +
     '</button>' +
@@ -131,15 +137,25 @@ function duplicate() {
   document.getElementById('marks1').value = '';
   document.getElementById('sub1').value = '';
 }
+var newopt=0;
 function calcsum(markslast) {
     sum = parseFloat(sum) + parseFloat(markslast);
     var txt1 = eval(parseFloat(sum));
   
     document.getElementById('total').innerHTML = txt1;
+    var selectedmarks=document.getElementById("outofmarks");
+    var opt=selectedmarks.value;
+
+     newopt=parseInt(opt)+newopt;
+    console.log(newopt)
+   
+  // var txt2 = eval(parseFloat(txt1 * opt) / ((room - 1) * 100));
+  var txt2 = eval(parseFloat((txt1*100) /newopt));
+
+  //Select out of 100 oor 50 not mix ;
   
-    var txt2 = eval(parseFloat(txt1 * 100) / ((room - 1) * 100));
     document.getElementById('percent').innerHTML = txt2.toFixed(2) + '%';
-  
+    
     switch (true) {
       case txt2 > 75:
         document.getElementById('grade').innerHTML = 'Pass with Distinction';
@@ -227,8 +243,7 @@ function deleterow(o) {
   document.getElementById('total').innerHTML = diffvalue;
 
   var txt2 = eval(
-    parseFloat(diffvalue * 100) / ((room - 1 - deletecount) * 100)
-  );
+    parseFloat(diffvalue * 100) / ((room - 1 - deletecount) * 100));
   document.getElementById('percent').innerHTML = txt2.toFixed(2) + '%';
 
   switch (true) {

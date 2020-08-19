@@ -190,3 +190,12 @@ input{
 #displaygrade{
 	display: none;
 }
+
+#outofmarks {
+	padding: 5px;
+text-align: center;
+}
+
+#outofmarks option{
+text-align: center;
+}
