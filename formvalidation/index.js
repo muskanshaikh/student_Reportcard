@@ -3,6 +3,7 @@ const name = document.getElementById('name');
 const rollno = document.getElementById('rollno');
 const letters=/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
 var numbers=/^[A-Za-z]{4}\d{5}$/;
+
 form.addEventListener('submit', e => {
 	e.preventDefault();
 	
@@ -12,6 +13,9 @@ form.addEventListener('submit', e => {
 });
 
 function myfunction(){
+
+    let displaygrade=document.getElementById("displaygrade");
+    displaygrade.style.display="block";
   var a = document.form1.txtname.value;
  document.getElementById("newname").innerHTML=a;
  var e = document.form1.txtrollno.value;
@@ -29,65 +33,7 @@ function myfunction(){
 
 }
 var sum=0;
-function calcsum(markslast){
-  
-   sum=parseFloat(sum) + parseFloat(markslast);
-   var txt1 = eval(parseFloat(sum));
-    
-   document.getElementById("total").innerHTML = txt1;
-   
-   var txt2 =eval(parseFloat(txt1*100)/((room-1)*100));
-   document.getElementById("percent").innerHTML = txt2.toFixed(2)+"%";
-   
-   
-   switch(true)
-   {
-   
-   case(txt2>75):
-   document.getElementById("grade").innerHTML="Pass with Distinction";
-   break;
-   case(txt2>60&& txt2 < 75):
-   document.getElementById("grade").innerHTML="Pass with first class";
-   break;
-   case(txt2>35 && txt2<60):
-   document.getElementById("grade").innerHTML="Pass";
-   break;
-   
-   case(txt2<35):
-   document.getElementById("grade").innerHTML="Fail";
-   break;
-   }
-  
-        
-}
-var i=1
-function updatetable(lastchild,markslast){
-    var parent= document.getElementById('tbl');
-    var childdiv = document.createElement("tr"); // create child div on the fly
-    
-    childdiv.innerHTML = '' +' <td width="135">'+'Subj'+i+'</td> '+'<td width="135" height="30">'+'<font face="arial" id="subjectname">'+lastchild+'</font>'+'</td>'+'<td>'+'<font face="arial" id="account">'+markslast+'</font>'+'</td>';
-    i++;
-    parent.appendChild(childdiv);
-    if(markslast<35){
-    childdiv.style.background="red";    
-    }
-    console.log(parent);
-    calcsum(markslast);
 
-   
-}
-function updatemarks(room){
-    let sub1=document.getElementsByClassName("removeclass"+room)[0];
-let child=sub1.children[0];
-let lastchild=child.children[0].value;
-let markschild=sub1.children[1];
-let markslast=markschild.children[0].value;
-
-updatetable(lastchild,markslast);
-
-
-
-}
  
 
 function checkInputs() {
@@ -96,8 +42,11 @@ function checkInputs() {
     const rollnovalue = rollno.value.trim();
 
   
-    
-   
+    var b = document.form1.txtfame.value.trim();
+   if(!b.match(letters)){
+    alert("Please enter alphanumeric characters only");
+    return false;
+   }
 
     
     if(nameValue === '') {
@@ -120,7 +69,13 @@ function checkInputs() {
         alert("please enter rollno in this format: COEP23456");
         return false;
     }
+
+    if(rollno.length<9){
+        alert("please enter rollno in this format: COEP23456");
+        return false;
+    }
     
+
  return true;
     
 }
@@ -137,6 +92,20 @@ function duplicate(){
         alert("please enter marks")
         return false;
     }
+
+    if(marks.length>2){
+        alert("please enter only 2 digits")
+        return false;
+     
+    }
+
+if(!marks.match(/^[0-9]+$/)){
+alert("please enter number")
+return false;
+}
+
+
+
     if(!subject.match(letters)){
 alert("please enter correct subject name")
 return false;
@@ -156,11 +125,9 @@ return false;
     parentDiv.appendChild(childDiv);
 
   
-let obj={
-    subject:subject,
-    marks:marks
-}
-information.push(obj);
+
+
+
 
 updatemarks(room);
 document.getElementById("marks1").value="";
@@ -182,8 +149,8 @@ function deleterow(o){
     //var tbl = document.getElementById('tbl');
     //tbl.deleteRow(o.parentNode.parentNode.rowIndex);
     var row = o.parentNode.parentNode;
-    var name = row.getElementsByTagName("td")[0].innerHTML;
-    if (confirm("Do you want to delete: " + name)) {
+    var subname = row.getElementsByTagName("td")[0].innerHTML;
+    if (confirm("Do you want to delete: " + subname)) {
 
         //Get the reference of the Table.
         var table = document.getElementById("tbl");
@@ -192,28 +159,33 @@ function deleterow(o){
         table.deleteRow(row.rowIndex);
         deletecount++;
     }
-    
+    console.log(row.children[1].children[0].value);
+    let delrow=row.children[1].children[0].value;
   
- let sumvalue=document.querySelectorAll('input[name="txtaccount"]')[1].value;
- 
-calcvalue=sum-sumvalue;
-console.log(calcvalue);
- newgrade(calcvalue);
-
     
+    
+
+    let diffvalue=sum-delrow;
+    console.log(diffvalue);
+
+
+ 
  deletefromrow(o);//this is for deleting subject from form 
  
 
 
 } 
 
-function newgrade(calcvalue){
+
+function calcsum(markslast){
   
+    sum=parseFloat(sum) + parseFloat(markslast);
+    var txt1 = eval(parseFloat(sum));
+   
+    document.getElementById("total").innerHTML = txt1;
   
-    var txt1 = eval(parseFloat(calcvalue));
-    document.getElementById("total").innerHTML = calcvalue;
     
-    var txt2 =eval(parseFloat(txt1*100)/((room-1-deletecount)*100));
+    var txt2 =eval(parseFloat(txt1*100)/((room-1)*100));
     document.getElementById("percent").innerHTML = txt2.toFixed(2)+"%";
     
     
@@ -234,8 +206,42 @@ function newgrade(calcvalue){
     document.getElementById("grade").innerHTML="Fail";
     break;
     }
+ 
+  }
+  
+   
+    
+    
    
          
+ 
+ var i=1
+ function updatetable(lastchild,markslast){
+     var parent= document.getElementById('tbl');
+     var childdiv = document.createElement("tr"); // create child div on the fly
+     
+     childdiv.innerHTML = '' +' <td width="135">'+'Subj'+i+'</td> '+'<td width="135" height="30">'+'<font face="arial" id="subjectname">'+lastchild+'</font>'+'</td>'+'<td>'+'<font face="arial" id="account">'+markslast+'</font>'+'</td>';
+     i++;
+     parent.appendChild(childdiv);
+     if(markslast<35){
+     childdiv.style.background="red";    
+     }
+     console.log(parent);
+     calcsum(markslast);
+ 
+    
+ }
+ function updatemarks(room){
+     let sub1=document.getElementsByClassName("removeclass"+room)[0];
+ let child=sub1.children[0];
+ let lastchild=child.children[0].value;
+ let markschild=sub1.children[1];
+ let markslast=markschild.children[0].value;
+ 
+ updatetable(lastchild,markslast);
+ 
+ 
+ 
  }
 
 function deletefromrow(o){
@@ -249,19 +255,14 @@ let info={
     marks:marks,
     rollno:e
 }
-
 console.log(information);
-
 var existing = localStorage.getItem('details');
-
 // If no existing data, create an array
 // Otherwise, convert the localStorage string to an array
 existing = existing ?JSON.parse(existing) : [];
-
 // Add new data to localStorage Array
 existing.push(info);
    
-
     
   // var drophistory = JSON.parse(localStorage.getItem("details"));
     //let arr = Object.entries(drophistory);
@@ -291,10 +292,7 @@ existing.push(info);
     var marks = document.getElementById('marks1').value;
     var subject = document.getElementById('sub1').value;
     console.log(subject);
-
     console.log(marks);
-
-
 }
 */
 /*let details={
@@ -308,3 +306,4 @@ existing.push(info);
 
 // let newinfo=JSON.parse(localStorage.getItem("information"));
  //let subnew=localStorage.getItem("details");
+

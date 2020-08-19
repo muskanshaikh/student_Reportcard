@@ -120,7 +120,7 @@ input{
   
  
   
-@media only screen and (max-width:800px) {
+@media only screen and (max-width:900px) {
     .responsive thead th:not(:first-child) {
         display: none;
     }
@@ -163,9 +163,29 @@ input{
 	#sub1{
 		display: block;
 		width: 100%;
+		margin: 3px auto;
 	}
 	#marks1{
 		display: block;
 		width:100%;
+		margin:3px auto;
+		
 	}
+
+	#add{
+		margin: 2px;
+	}
+	.container{
+		width: 100%;
+	}
+
+	#subname {
+		display: flex;
+		
+	}
+	
+}
+
+#displaygrade{
+	display: none;
 }
