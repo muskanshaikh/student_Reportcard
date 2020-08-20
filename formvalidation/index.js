@@ -177,12 +177,13 @@ function calcsum(markslast) {
     var txt1 = eval(parseFloat(sum));
   
     document.getElementById('total').innerHTML = txt1;
+
     var selectedmarks=document.getElementById("outofmarks");
     var opt=selectedmarks.value;
 
      newopt=parseInt(opt)+newopt;
     console.log(newopt);
-   
+   document.getElementById('outof').innerHTML=newopt;
   // var txt2 = eval(parseFloat(txt1 * opt) / ((room - 1) * 100));
   var txt2 = eval(parseFloat((txt1*100) /newopt));
 
@@ -274,6 +275,8 @@ function deleterow(o) {
   
 
   document.getElementById('total').innerHTML = diffvalue;
+
+  
   var selectedmarks=document.getElementById("outofmarks");
   var opt=selectedmarks.value;
   var txt2 = eval(
