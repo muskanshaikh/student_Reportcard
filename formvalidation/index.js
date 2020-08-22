@@ -1,25 +1,29 @@
 const form = document.getElementById('form');
 const name = document.getElementById('name');
 const rollno = document.getElementById('rollno');
-const academic=document.getElementById("academic");
+
 const letters = /^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/;
 var numbers = /^[A-Za-z]{4}\d{5}$/;
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault();
+
+ e.preventDefault()
 
   if (checkInputs()) {
     myfunction();
   }
+  window.location.href="grade.html";
 });
+
+
 
 var sum = 0;
 function checkInputs() {
   // trim to remove the whitespaces
   const nameValue = name.value.trim();
   const rollnovalue = rollno.value.trim();
- const academicvalue=academic.value.trim();
- var _thisYear = new Date().getFullYear();
+
+ 
   if (nameValue === '') {
     alert('name cannot be blank');
     name.focus();
@@ -58,38 +62,45 @@ function checkInputs() {
     return false;
   }
 
-  if (parseInt(academicvalue) > _thisYear || parseInt(academicvalue) < 1900){
-   academic.focus();
-    alert('please enter year ');
-    return false;
-  }
+  
   
 
   return true;
 }
+let studentinfo=[];
 function myfunction() {
-  let displaygrade = document.getElementById('displaygrade');
-  displaygrade.style.display = 'block';
-  var a = document.form1.txtname.value;
-  document.getElementById('newname').innerHTML = a;
+  
+  
+var a = document.form1.txtname.value;
   var e = document.form1.txtrollno.value;
-  document.getElementById('rno').innerHTML = e;
-  var b = document.form1.txtfame.value;
-  document.getElementById('fname').innerHTML = b;
+  var c=document.form1.txtfame.value;
+  let marks=JSON.parse(localStorage.getItem("Submarks"))
+  let info={
+    name:a,
+    rollno:e,
+    class:c,
+    subject:marks,
+    
+    
 
-  var c = document.form1.txtinstitute.value;
+}
+studentinfo.push(info);
+var studenthistory=JSON.parse(localStorage.getItem("Submarks"));
+if(studenthistory!=null){
+let newarr = Object.entries(studenthistory);
+////console.log(arr);
+newarr.push(studentinfo)
+localStorage.setItem("details",JSON.stringify(studentinfo));
+}else{
+//arr.push(submarks);
+localStorage.setItem("details",JSON.stringify(studentinfo));
+}
 
-  document.getElementById('inst_name').innerHTML = c;
-  var d = document.form1.txtuniversity.value;
-  document.getElementById('uni').innerHTML = d;
-  var y = document.form1.txtyear.value;
-  document.getElementById('year').innerHTML = y;
 
-  document.getElementById('name').value = '';
-  document.getElementById('rollno').value = '';
-  document.getElementById('college').value = '';
-document.getElementById('class').value = '';
-document.getElementById('academic').value = '';
+document.getElementById("name").value="";
+document.getElementById("rollno").value="";
+document.getElementById("class").value="";
+
 }
 
 
@@ -121,11 +132,6 @@ function duplicate() {
     alert('please enter correct subject name');
     return false;
   }
-  var a = document.form1.txtname.value;
-  var e = document.form1.txtrollno.value;
-
-  room++;
-  
   var selectedmarks=document.getElementById("outofmarks");
   var opt=selectedmarks.value;
   if(opt=="50"){
@@ -141,38 +147,122 @@ function duplicate() {
       return false;
     }
   }
+
+  localStorage.setItem("outof",opt);
+  let submarks={
+    subject:subject,
+    marks:marks,
+    opt:opt
+  }
+
+ //// var existing = localStorage.getItem('Submarks');
+
+//existing = existing ?JSON.parse(existing) : [];
+ //console.log(typeof existing);
+ 
+ //let arr = Object.keys(existing);
+//console.log(arr)
+ 
+    
+  
+ information.push(submarks);
+ console.log(information);
+  
+var drophistory=JSON.parse(localStorage.getItem("Submarks"));
+if(drophistory!=null){
+let arr = Object.entries(drophistory);
+////console.log(arr);
+arr.push(information)
+localStorage.setItem("Submarks",JSON.stringify(information));
+}else{
+//arr.push(submarks);
+localStorage.setItem("Submarks",JSON.stringify(information));
+}
+  room++;
+  
+  
   var parentDiv = document.getElementById('tbl2');
 
-  var childDiv = document.createElement('tr'); // create child div on the fly
+  var childDiv = document.createElement('div'); // create child div on the fly
   childDiv.setAttribute('class', 'removeclass' + room);
 
   childDiv.innerHTML =
     '' +
-    ' <td width="140" id="subname" >' +
+    ' <div width="140" id="subname" >' +
     '<input type="text" placeholder="enter subject name" id="sub1"  disabled="disabled" value="' +
     subject +
     '"/>' +
-    '</td>' +
-    '<td id="marks">' +
+    '</div>&nbsp;' +
+    '<div id="marks">' +
     '<input type="text" name="txtaccount" maxlength="2" size="10" id="marks1" placeholder="marks" disabled="disabled" value="' +
     marks +
     '"/>' +
     '&nbsp;Out of '+opt+' &nbsp;&nbsp;' +
-    '<button type="button" name="reset" onclick="deleterow(this)" id="add">' +
+    '<button type="button" name="reset" onclick="deletefromrow(this)" id="add">' +
     'Delete' +
     '</button>' +
-    '</td>';
+    '</div>';
   insert++;
   parentDiv.appendChild(childDiv);
 
-  updatemarks(room);
+ // updatemarks(room);
   document.getElementById('marks1').value = '';
   document.getElementById('sub1').value = '';
+
+
 }
 var newopt=0;
+function deletefromrow(o) {
+  var p = o.parentNode.parentNode;
+  console.log(p);
+  var subname = p.getElementsByTagName('div')[0].innerHTML;
+
+  //Get the reference of the Table.
+  var table = document.getElementById('tbl');
+ 
+
+ 
+ var dataarray=JSON.parse(localStorage.getItem("Submarks"));
+   
+  let  delrow = p.children[0].children[0].value;
+
+ console.log(dataarray);
+ var removeindex=dataarray.map(function(item){ return item.subject;}).indexOf(delrow);
+// console.log(removeindex);
+if(removeindex>-1){
+  
+
+dataarray.splice(removeindex,1);
+}
+ //console.log(dataarray);
+
+
+ localStorage.setItem("Submarks",JSON.stringify(dataarray));
+
+
+
+
+
+
+
+
+/* var i=dataarray[0].subject.indexOf(delrow);
+  //console.log(i);
+  if(i>-1){
+    dataarray.splice(i,1);
+  }
+  localStorage.setItem("Submarks",JSON.stringify(dataarray));
+
+*/
+  p.parentNode.removeChild(p);
+
+
+
+}
+
 
 /*Calculating sum*/
-function calcsum(markslast) {
+/*function calcsum(markslast) {
     sum = parseFloat(sum) + parseFloat(markslast);
     var txt1 = eval(parseFloat(sum));
   
@@ -207,9 +297,9 @@ function calcsum(markslast) {
         break;
     }
   }
-  
+ */
   /*For displaying report card in table */
-  function updatetable(lastchild, markslast) {
+ /*function updatetable(lastchild, markslast) {
     var parent = document.getElementById('tbl');
     var childdiv = document.createElement('tr'); // create child div on the fly
   
@@ -233,24 +323,13 @@ function calcsum(markslast) {
       childdiv.style.background = 'red';
     }
     console.log(parent);
-    calcsum(markslast);
-  }
-  function updatemarks(room) {
-    let sub1 = document.getElementsByClassName('removeclass' + room)[0];
-    let child = sub1.children[0];
-    let lastchild = child.children[0].value;
-    let markschild = sub1.children[1];
-    let markslast = markschild.children[0].value;
+   // calcsum(markslast);
+  }*/
+ 
   
-    updatetable(lastchild, markslast);
-  }
   
-  function deletefromrow(o) {
-    var p = o.parentNode.parentNode;
-    p.parentNode.removeChild(p);
-  }
 
-
+/*
 
 var deletecount = 0;
 
@@ -302,7 +381,7 @@ function deleterow(o) {
   deletefromrow(o); //this is for deleting subject from form
 }
 
-
+*/
 
 /*
 let info={

@@ -8,32 +8,34 @@
     </head>
   <body>
 
-      <div class="container">
+     
        
-        <h2>Student -Report Card</h2>
+     
 <!--Student information -->
-        <fieldset>
-            <legend>Student Information</legend>
-            <table id="tbl1">
-            <form name="form1" id="form">
-             <tr class="responsive">
-              <td>Name:</td><td><input type="text" name="txtname" id="name"   minlength="3" maxlength="20"  placeholder="enter your name" required  /> </td>              
-              <td>&nbsp;Rollno:</td><td><input type="text" name="txtrollno" id="rollno"  placeholder="enter rollno" required /> </td>              
-              <td>&nbsp;Class:</td><td><input type="text" name="txtfame" placeholder="Class"  id="class" required maxlength="2"  pattern="\d*"/></td>
-             </tr>
-             <tr class="responsive">
-              <td>Institute Name:</td><td><input type="text" name="txtinstitute" placeholder="enter institute name" required  id="college"/></td>
-              <td>&nbsp;University:</td><td><select name="txtuniversity" id="University" class="box">
-               <option value="_______" selected>--------</option>
-                <option value="Mumbai">Mumbai</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Delhi">Pune</option>
-                <option value="Delhi">Kolkata</option>
-              </select> </td>
-              <td>&nbsp;Academic Year:</td><td><input  id="academic" type="text" name="txtyear" placeholder="enter  academic year"  pattern="\d*" required maxlength="4" /></td>
-             </tr>
-            </table>
-           </fieldset>
+      
+            <div class="wrapper">
+              <div class="title">
+                Student-Report Card
+              </div>
+              <div class="form">
+                <fieldset>
+                  <legend>Student Information</legend>
+            <form name="form1" id="form"  action="grade.html">
+              <div class="inputfield">
+                <label>Name:</label><input type="text" name="txtname" id="name"   minlength="3" maxlength="20"  placeholder="enter your name" required  />             
+          
+             </div> 
+              <div class="inputfield">
+                <label>Rollno:</label><input type="text" name="txtrollno" id="rollno"  placeholder="enter rollno" required />        
+           </div> 
+              <div class="inputfield">
+                <label>Class:</label><input type="text" name="txtfame" placeholder="Class"  id="class" required maxlength="2"  pattern="\d*"/>
+          
+             </div>
+             </fieldset> 
+            
+                     
+         
            <br /><br /> 
            <!--Student information ends--> 
            <!--Remarks start-->
@@ -44,82 +46,32 @@
        
            <fieldset>
             <legend>Subject Remarks</legend>
-            <table  id="tbl2">
-             <tr id="clonerow" class="responsive" >
-              <td width="140" id="subname" ><input type="text" placeholder="enter subject name" id="sub1"  value="" /></td><td id="marks"><input type="text" name="txtaccount"  maxlength="2" size="10" id="marks1"  placeholder=" marks " value="" />
+            <div  id="tbl2">
+             <div id="clonerow" class="responsive" >
+              <div width="140" id="subname" ><input type="text" placeholder="enter subject name" id="sub1"  value="" />
+              </div> &nbsp;<div id="marks"><input type="text" name="txtaccount"  maxlength="2" size="10" id="marks1"  placeholder=" marks " value="" />
               &nbsp;Out of <select name="outof" id="outofmarks">
                
                 <option value="100">100</option>
                 <option value="50">50</option>
               </select> &nbsp;&nbsp; <button type="button" onclick="duplicate()" id="add">Add More Subject</button>
               
-             
-             </tr>
+             </div>
+            </div>
              <!--Remarks end-->
              
-            </table>
+           
            
            </fieldset>
-
-        <button id="submit">Submit</button>
+           <div class="inputfield">
+            <input type="submit" value="Submit" class="btn">
+          </div>
+     <!--  <button id="submit" type="submit" >Submit</button>--> 
       
       </form>
-      <hr>
+      
       <!--Display of student details if student is below 35 marks the row will be red-->
-      <div class="std_info" id="displaygrade">
-        <div class="newtb">
-        <table border="1"   >
-         <tr>
-          <th colspan="2" width="240">Student Information</th>
-         </tr>
-         <tr>
-          <td width="135">Name:</td><td><font face="arial" id="newname"></font></td>
-         </tr>
-         <tr>
-            <td width="135">Rollno:</td><td><font face="arial" id="rno"></font></td>
-           </tr>
-         <tr>
-          <td width="135">Class</td><td><font face="arial" id="fname"></font></td>
-         </tr>
-         <tr>
-          <td width="135">Institute Name:</td><td><font face="arial" id="inst_name"></font></td>
-         </tr>
-         <tr>
-          <td width="135">University:</td><td><font face="arial" id="uni"></font></td>
-         </tr><tr>
-          <td width="135">Year:</td><td><font face="arial" id="year"></font></td>
-         </tr>
-         
-         <tr>
-            <th colspan="2" width="135">Subject Marks</th>
-           </tr>
-        </table>
-           <table id="tbl" border="1" >
-           <tr>
-
-              <td width="135">Subject Name</td><td>Subject Marks</td>
-             </tr>
-              </table>
-         <table border="1">
-              <tr>
-                <th colspan="2" width="140">Subject Remarks</th>
-               </tr>
-               <tr>
-                <td width="135">Obtained Marks:</td><td><font face="arial" id="total"></font></td>
-               </tr>
-               <tr>
-                <td width="135">Out of:</td><td><font face="arial" id="outof"></font></td>
-               </tr>
-               <tr>
-                <td width="135">Percentage:</td><td><font face="arial" id="percent"></font></td>
-               </tr>
-               <tr>
-                <td width="135">Grade:</td><td><font face="arial" id="grade"></font></td>
-               </tr>
-              </table>
-            </div>
-        </div>
-     
+      
     </div>
 <!--End-->
     
