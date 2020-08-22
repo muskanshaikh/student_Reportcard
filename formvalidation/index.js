@@ -72,6 +72,8 @@ let history=JSON.parse(localStorage.getItem("Submarks"));
 if(i==1){
   myfunction();
   window.location.href="grade.html";
+
+  
 }
 else{
   
@@ -254,7 +256,10 @@ dataarray.splice(removeindex,1);
 
  localStorage.setItem("Submarks",JSON.stringify(dataarray));
 
+ p.parentNode.removeChild(p);
 
+ alert("Your item has been deleted successfully")
+ checkInputs();
 
 
 
@@ -269,7 +274,7 @@ dataarray.splice(removeindex,1);
   localStorage.setItem("Submarks",JSON.stringify(dataarray));
 
 */
-  p.parentNode.removeChild(p);
+ 
 
 
 
