@@ -28,7 +28,8 @@ window.addEventListener('load', () => {
    updatetable()
   
    
-     calcsum()       
+     calcsum()
+     localStorage.clear();       
 
 })
 var sum=0;
@@ -105,6 +106,8 @@ return flag;
         
         }
 });
+
+
   }
 
   

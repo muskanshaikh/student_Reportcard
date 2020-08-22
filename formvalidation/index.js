@@ -9,16 +9,17 @@ form.addEventListener('submit', (e) => {
 
  e.preventDefault()
 
-  if (checkInputs()) {
-    myfunction();
-  }
-  window.location.href="grade.html";
+ checkInputs();
+  
+
+
 });
 
 
 
 var sum = 0;
 function checkInputs() {
+  let i=1;
   // trim to remove the whitespaces
   const nameValue = name.value.trim();
   const rollnovalue = rollno.value.trim();
@@ -27,45 +28,56 @@ function checkInputs() {
   if (nameValue === '') {
     alert('name cannot be blank');
     name.focus();
-    return false;
+  i=0;
   }
   if(name.length>20){
     alert('name cannot be more than 20 words');
     name.focus();
-    return false; 
+    i=0; 
   }
 
   if(name.length<3){
     alert('name cannot be less than 3 words');
     name.focus();
-    return false; 
+    i=0; 
   }
 
   if (!nameValue.match(letters)) {
     alert('Please enter alphanumeric characters only');
-    return false;
+    i=0;
   }
   if (rollnovalue === '') {
     alert('rollno cannot be blank');
     rollno.focus();
-    return false;
+    i=0;
   }
   if (!rollnovalue.match(numbers)) {
     rollno.focus();
     alert('please enter rollno in this format: COEP23456');
-    return false;
+    i=0;
   }
 
   if (!rollno.length > 9) {
     rollno.focus();
     alert('please enter rollno in this format: COEP23456');
-    return false;
+    i=0;
   }
-
+let history=JSON.parse(localStorage.getItem("Submarks"));
+ 
+ if(history==null){
+   alert("please enter subject and marks")
+   i=0;
+ }
+    
+if(i==1){
+  myfunction();
+  window.location.href="grade.html";
+}
+else{
   
+  return false;
+}
   
-
-  return true;
 }
 let studentinfo=[];
 function myfunction() {
@@ -86,6 +98,8 @@ var a = document.form1.txtname.value;
 }
 studentinfo.push(info);
 var studenthistory=JSON.parse(localStorage.getItem("Submarks"));
+
+
 if(studenthistory!=null){
 let newarr = Object.entries(studenthistory);
 ////console.log(arr);
@@ -100,6 +114,7 @@ localStorage.setItem("details",JSON.stringify(studentinfo));
 document.getElementById("name").value="";
 document.getElementById("rollno").value="";
 document.getElementById("class").value="";
+
 
 }
 
