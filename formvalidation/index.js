@@ -259,7 +259,7 @@ dataarray.splice(removeindex,1);
  p.parentNode.removeChild(p);
 
  alert("Your item has been deleted successfully")
- checkInputs();
+ 
 
 
 
