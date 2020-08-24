@@ -171,17 +171,6 @@ function duplicate() {
     marks:marks,
     opt:opt
   }
-
- //// var existing = localStorage.getItem('Submarks');
-
-//existing = existing ?JSON.parse(existing) : [];
- //console.log(typeof existing);
- 
- //let arr = Object.keys(existing);
-//console.log(arr)
- 
-    
-  
  information.push(submarks);
  console.log(information);
   

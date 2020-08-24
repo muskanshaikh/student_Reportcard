@@ -16,6 +16,7 @@ body {
 	margin: 20px 20px;
 	
 }
+
 .wrapper{
 	max-width: 800px;
 	width: 100%;
@@ -27,6 +28,7 @@ body {
 	padding-bottom: 30px;
 	
   }
+ 
 
   .wrapper .title{
 	font-size: 24px;
@@ -38,6 +40,7 @@ body {
 	background-color: rgb(1 10 37);
 	padding: 20px;
 	width: 100%;
+	letter-spacing: 2px;
 	
 	
   }
