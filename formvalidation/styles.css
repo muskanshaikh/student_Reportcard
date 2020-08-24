@@ -107,7 +107,7 @@ input{
 	border:1px solid white;
 	background-color: black;
 	color:white;
-	width:500px;
+	width:600px;
 	margin: auto;
 	border-radius: 1em;
 	border-collapse: collapse;
@@ -120,11 +120,19 @@ input{
 .std_info table {
 	width: 100%;
 	
+	
+}
+.borderright{
+	border-right: 2px solid white;
 }
 
+#borderbottom{
+	border-bottom: none;
+}
 .std_info table td {
 	padding: 10px;
 	border-bottom: 2px solid white; 
+	
 }
 
 .std_info table td{

@@ -243,7 +243,7 @@ function deletefromrow(o) {
    
   let  delrow = p.children[0].children[0].value;
 
- console.log(dataarray);
+ //console.log(dataarray);
  var removeindex=dataarray.map(function(item){ return item.subject;}).indexOf(delrow);
 // console.log(removeindex);
 if(removeindex>-1){
@@ -255,7 +255,8 @@ dataarray.splice(removeindex,1);
 
 
  localStorage.setItem("Submarks",JSON.stringify(dataarray));
-
+//information.splice(delrow,1);
+console.log(information.splice(removeindex,1))
  p.parentNode.removeChild(p);
 
  alert("Your item has been deleted successfully")

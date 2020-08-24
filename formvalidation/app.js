@@ -29,9 +29,10 @@ window.addEventListener('load', () => {
   
    
      calcsum()
-     localStorage.clear();       
+     localStorage.clear();
 
-})
+});
+
 var sum=0;
 var newopt=0;
 
@@ -49,7 +50,7 @@ let outof;
       
         if(markslast<35 && out==100){
           
-            document.getElementById("grade").innerHTML="fail";
+            document.getElementById("grade").innerHTML="Fail &#128546;";
             document.getElementById('total').innerHTML = "----"; 
             document.getElementById('outof').innerHTML="----";
             document.getElementById('percent').innerHTML = "----";
@@ -60,7 +61,7 @@ let outof;
          }
          
          if(markslast<12 && out==50){
-          document.getElementById("grade").innerHTML="fail";
+          document.getElementById("grade").innerHTML="Fail &#128546;";
           document.getElementById('total').innerHTML = "----"; 
           document.getElementById('outof').innerHTML="----";
           document.getElementById('percent').innerHTML = "----";
@@ -89,17 +90,17 @@ return flag;
  
     switch (true) {
       case txt2 > 75:
-        document.getElementById('grade').innerHTML = 'Pass with Distinction';
+        document.getElementById('grade').innerHTML = 'Pass with Distinction &#128522;';
         break;
       case txt2 > 60 && txt2 < 75:
-        document.getElementById('grade').innerHTML = 'Pass with first class';
+        document.getElementById('grade').innerHTML = 'Pass with first class &#128522;';
         break;
       case txt2 > 35 && txt2 < 60:
-        document.getElementById('grade').innerHTML = 'Pass';
+        document.getElementById('grade').innerHTML = 'Pass &#128522;';
         break;
   
       case txt2 < 35 :
-        document.getElementById('grade').innerHTML = 'Fail';
+        document.getElementById('grade').innerHTML = 'Fail &#128546;';
         break;
     }
 
@@ -133,7 +134,7 @@ marks.map(item=>{
       '' +
       
       '</td> ' +
-      '<td width="135" height="30">' +
+      '<td width="135" height="30" class="borderright">' +
       '<font face="arial" id="subjectname">' +
       lastchild +
       '</font>' +
