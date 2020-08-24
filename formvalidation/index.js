@@ -256,7 +256,7 @@ dataarray.splice(removeindex,1);
 
  localStorage.setItem("Submarks",JSON.stringify(dataarray));
 //information.splice(delrow,1);
-console.log(information.splice(removeindex,1))
+information.splice(removeindex,1)
  p.parentNode.removeChild(p);
 
  alert("Your item has been deleted successfully")
