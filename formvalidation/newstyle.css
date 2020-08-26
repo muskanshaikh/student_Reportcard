@@ -1,186 +1,30 @@
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-html,body{
-	overflow-x: hidden;
+body,html{
+  overflow-x: hidden;
 }
 body { 
 	
-	background: linear-gradient(90deg, rgb(31, 43, 224), lightcoral);background-color: #9b59b6;
 	font-family: 'Open Sans', sans-serif;
-	
+  background: linear-gradient(90deg, rgb(31, 43, 224), lightcoral);background-color: #9b59b6;
+		
 	min-height: 100vh;
 	margin: 20px 20px;
 	
 }
 
 
-
-  .wrapper .title{
-	font-size: 24px;
-	font-weight: 700;
-	margin-bottom: 25px;
-	color: white;
-	text-transform: uppercase;
-	text-align: center;
-	background-color: rgb(1 10 37);
-	padding: 20px;
-	width: 100%;
-	letter-spacing: 2px;
-	
-	
-  }
-  
-  .wrapper .form .inputfield{
-	  padding: 5px 10px;
-  }
- 
-  
-  
-  
-  .wrapper .form .inputfield .btn{
-	width: 300px;
-	 padding: 8px 10px;
-	font-size: 15px; 
-	border: 0px;
-	background:  #122c4c;
-	color: #fff;
-	cursor: pointer;
-	border-radius: 3px;
-	outline: none;
-	margin:20px auto;
-	
-  }
-
-
-#marks{
-	display: inline-block;
-	padding: 10px;
-}
-
-#subname{
-	display: inline-block;
-	padding: 10px;
-}
-
-
-
-
-input{
-	border: 2px solid black;
-	
-	border-radius: 4px;
-	display: inline-block;
-	width: 200px;
-	font-family: inherit;
-	font-size: 14px;
-	padding: 10px;
-}
-
-
-
-
-
-#add{
-	padding: 8px;
-	border: 2px solid black;
-	background-color: darkorchid;
-	color:white;
-	cursor: pointer;
-margin-top: 20px;
-	border-radius: 3px;
-}
-
-#add:hover{
-	background-color: violet;
-	color: black;
-	transition: linear 2s ease-in-out;
-}
-::placeholder{
-	color:black;
-	opacity: 0.3;
-}
-
-
-  
-  
- 
-  
-@media only screen and (max-width:1060px) {
-    
-#form input{
-	width: 100%;
-}
-  
-	
-	#marks{
-		width: 100%;
-	}
-	body{
-		margin:5px;
-	}
-	
-
-	#add{
-		display: block;
-	}
-	
-		
-	
-		#sub1{
-			display: block;
-			width: 100%;
-			margin: 3px auto;
-		}
-		#marks1{
-			display: block;
-			width:100%;
-			margin:3px auto;
-			
-		}
-	
-		#add{
-			margin: 2px;
-		}
-		
-		#subname {
-			display: flex;
-			
-		}
-		
-
-	
-}
-
-
-
-
-#outofmarks {
-	padding: 5px;
-text-align: center;
-}
-
-#outofmarks option{
-text-align: center;
-}
-
-
-  
-  
-
-
-  .main{
+.main{
     width:800px;
     margin: 30px auto;
     min-height: 100vh;
     border: 10px solid black;
     background-color: white;
     padding-top: 20px;
-	padding-bottom: 20px;
-	border-radius: 10px;
+    padding-bottom: 20px;
     
 }
 .container{
@@ -258,8 +102,7 @@ h2{
 
  .display .inputfield label,.display .inputfield input{
     font-weight: bold;
-	font-size: 17px;
-	margin: 5px;
+    font-size: 17px;
   
      }
  
@@ -331,11 +174,10 @@ h2{
   table tr {
     background-color: #f8f8f8;
     border: 1px solid #ddd;
-	padding: .35em;
-	
+    padding: .35em;
   }
 
-
+/* Zebra striping */
 tr:nth-of-type(odd) { 
 	background: #eee; 
 	}
@@ -343,23 +185,26 @@ tr:nth-of-type(odd) {
   table th,
   table td {
     padding: .625em;
-	text-align: center;
-	
+    text-align: center;
   }
   
   table th {
     font-size: .85em;
     letter-spacing: .1em;
     text-transform: uppercase;
-   
+  }
+th { 
 	background: #3498db; 
 	color: white; 
 	font-weight: bold; 
-	
 	}
 
-	
-
+td, th { 
+	padding: 10px; 
+	border: 1px solid #ccc; 
+	text-align: left; 
+	font-size: 18px;
+  }
   #add{
     padding: 8px;
     border: 2px solid black;

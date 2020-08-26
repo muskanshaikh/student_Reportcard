@@ -1,68 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Student-Report Card</title>
 </head>
-<body>
- 
-    <div class="std_info" id="displaygrade">
-    
-        <div class="newtb">
-          
-        <table  >
-         <tr>
-          <th colspan="2" width="240">Student Information</th>
-         </tr>
-         <tr>
-          <td width="135" class="borderright">Name:</td><td><font face="arial" id="newname"></font></td>
-         </tr>
-         <tr>
-            <td width="135" class="borderright">Rollno:</td><td><font face="arial" id="rno"></font></td>
-           </tr>
-         <tr>
-          <td width="135" class="borderright">Class</td><td><font face="arial" id="fname"></font></td>
-         </tr>
-         <tr>
-          <td width="135" class="borderright">Institute Name:</td><td><font face="arial" id="inst_name">AIKTC</font></td>
-         </tr>
-         <tr>
-          <td width="135" class="borderright">University:</td><td><font face="arial" id="uni">MUMBAI</font></td>
-         </tr><tr>
-          <td width="135" class="borderright">Year:</td><td><font face="arial" id="year">2020</font></td>
-         </tr>
-         
-         <tr>
-            <th colspan="2" width="135">Subject Marks</th>
-           </tr>
-        </table>
-           <table id="tbl"  >
-           <tr>
 
-              <td width="135" class="borderright">Subject Name</td><td>Subject Marks</td>
-             </tr>
-              </table>
-         <table >
-              <tr>
-                <th colspan="2" width="140">Subject Remarks</th>
-               </tr>
-               <tr>
-                <td width="135" class="borderright">Obtained Marks:</td><td><font face="arial" id="total"></font></td>
-               </tr>
-               <tr>
-                <td width="135" class="borderright">Out of:</td><td><font face="arial" id="outof"></font></td>
-               </tr>
-               <tr>
-                <td width="135" class="borderright">Percentage:</td><td><font face="arial" id="percent"></font></td>
-               </tr>
-               <tr>
-                <td width="135" class="borderright" id="borderbottom">Grade:</td><td id="borderbottom"><font face="arial" id="grade" ></font></td>
-               </tr>
-              </table>
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="logo">
+                <img src="college.jpg" />
+            </div>
+
+            <div class="University">
+                <h3>University of Mumbai</h3>
+                <h4>Erstwhile 4YUP Semester Exam May­June 2020</h4>
+                <h5>(Student admitted in the year of 2020)</h5>
+            </div>
+
+        </div>
+        <div class="dismarks">
+            <h2>Statement of marks</h2>
+        </div>
+        <div class="wrapper">
+            <div class="form">
+                <form name="form1" id="form" action="grade.html">
+
+                    <div class="inputfield">
+                        <label>Name:</label><input type="text" name="txtname" id="newname" minlength="3" maxlength="20"
+                            readonly />
+
+                    </div>
+                    <div class="inputfield">
+                        <label>Rollno:</label><input type="text" name="txtrollno" id="rno" readonly />
+                    </div>
+                    <div class="inputfield">
+                        <label>Class:</label><input type="text" name="clgname" id="rno" readonly value="XI" />
+                    </div>
+                    <div class="inputfield">
+                        <label>Institute name:</label><input type="text" name="clgname" id="rno" readonly
+                            value="AIKTC" />
+                    </div>
+
+
+                </form>
             </div>
         </div>
-        <script src="app.js"></script>
+
+
+        <div style="overflow-x:auto;">
+            <table id="tbl" border="1">
+
+                <tr>
+                    <th width="150" >Subject Code</th>
+                    <th width="150" >Subject Name</th>
+                    <th width="150">Maximum Marks</th>
+                    <th width="150">Minimum Marks</th>
+                    <th width="150"> Marks</th>
+                 
+
+
+
+                </tr>
+
+            </table>
+        </div>
+        <div class="display">
+
+            <form name="form1" id="form">
+                <div class="inputfield">
+                    <label>Total Marks Obtained:</label><input type="text" name="txtname" id="granttotal" minlength="3"
+                        maxlength="20" readonly />
+
+                </div>
+                <div class="inputfield">
+                    <label>Out of:</label><input type="text" name="txtname" id="oboutof" minlength="3" maxlength="20"
+                        readonly />
+
+                </div>
+                <div class="inputfield">
+                    <label>Percentage:</label><input type="text" name="txtname" id="percent" minlength="3"
+                        maxlength="20" readonly />
+
+                </div>
+                <div class="inputfield">
+                    <label>Grade:</label><input type="text" name="txtname" id="grade" minlength="3" maxlength="20"
+                        readonly />
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+    </div>
+    <script src="app.js"></script>
 </body>
+
 </html>
