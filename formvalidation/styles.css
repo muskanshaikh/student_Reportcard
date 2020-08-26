@@ -4,22 +4,19 @@
 	padding: 0;
 }
 
-html,body{
+html, body {
 	overflow-x: hidden;
 }
-body { 
-	
-	background: linear-gradient(90deg, rgb(31, 43, 224), lightcoral);background-color: #9b59b6;
+
+body {
+	background: linear-gradient(90deg, rgb(31, 43, 224), lightcoral);
+	background-color: #9b59b6;
 	font-family: 'Open Sans', sans-serif;
-	
 	min-height: 100vh;
 	margin: 20px 20px;
-	
 }
 
-
-
-  .wrapper .title{
+.wrapper .title {
 	font-size: 24px;
 	font-weight: 700;
 	margin-bottom: 25px;
@@ -30,407 +27,253 @@ body {
 	padding: 20px;
 	width: 100%;
 	letter-spacing: 2px;
-	
-	
-  }
-  
-  .wrapper .form .inputfield{
-	  padding: 5px 10px;
-  }
- 
-  
-  
-  
-  .wrapper .form .inputfield .btn{
+}
+
+.wrapper .form .inputfield {
+	padding: 5px 10px;
+}
+
+.wrapper .form .inputfield .btn {
 	width: 300px;
-	 padding: 8px 10px;
-	font-size: 15px; 
+	padding: 8px 10px;
+	font-size: 15px;
 	border: 0px;
-	background:  #122c4c;
+	background: #122c4c;
 	color: #fff;
 	cursor: pointer;
 	border-radius: 3px;
 	outline: none;
-	margin:20px auto;
-	
-  }
-
-
-#marks{
-	display: inline-block;
-	padding: 10px;
+	margin: 20px auto;
 }
 
-#subname{
+#marks {
 	display: inline-block;
-	padding: 10px;
+	padding: 5px;
 }
 
+#subname {
+	display: inline-block;
+	padding: 5px;
+}
 
-
-
-input{
+input {
 	border: 2px solid black;
-	
+	border-radius: 4px;
+	display: inline-block;
+	width: 100%;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+}
+
+#add {
+	padding: 8px;
+	border: 2px solid black;
+	background-color: darkorchid;
+	color: white;
+	cursor: pointer;
+	margin-top: 20px;
+	border-radius: 3px;
+}
+
+#add:hover {
+	background-color: violet;
+	color: black;
+	transition: linear 2s ease-in-out;
+}
+
+::placeholder {
+	color: black;
+	opacity: 0.3;
+}
+
+
+
+.main {
+	width: 800px;
+	margin: 30px auto;
+	min-height: 100vh;
+	border: 10px solid black;
+	background-color: white;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-radius: 10px;
+}
+
+.container {
+	width: 100%;
+	display: flex;
+}
+
+.University {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 30px;
+}
+
+h3, h4, h5 {
+	font-size: 20px;
+	letter-spacing: 1px;
+}
+
+.dismarks {
+	border-top: 2px solid blue;
+	border-bottom: 2px solid blue;
+}
+
+h2 {
+	text-align: center;
+}
+
+.wrapper {
+	max-width: 800px;
+	width: 100%;
+	background: #fff;
+	margin: 10px auto;
+}
+
+.display {
+	border: 1px solid black;
+	padding: 10px;
+	margin: 20px;
+	width: 60%;
+	border: 20px double black;
+	box-shadow: 0 0 0 5px sandybrown;
+	border: 2px dotted black;
+	opacity: 0.8;
+	border-radius: 10px;
+}
+
+.display .inputfield {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.display label {
+	width: 200px;
+}
+
+.display .inputfield label, .display .inputfield input {
+	font-weight: bold;
+	font-size: 17px;
+	margin: 5px;
+}
+
+.wrapper .form {
+	width: 100%;
+	padding: 10px;
+}
+
+.wrapper .form .inputfield {
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wrapper .form .inputfield label {
+	width: 200px;
+	font-weight: bold;
+	margin-right: 10px;
+	font-size: 16px;
+	display: inline-block;
+}
+
+.wrapper .form .inputfield input {
+	width: 100%;
+	font-size: 16px;
+}
+
+
+input {
+	border: 2px solid black;
 	border-radius: 4px;
 	display: inline-block;
 	width: 200px;
 	font-family: inherit;
 	font-size: 14px;
 	padding: 10px;
+	transition: all 0.3s cubic-bezier(.64, .09, .08, 1);
 }
 
-
-
-
-
-#add{
-	padding: 8px;
-	border: 2px solid black;
-	background-color: darkorchid;
-	color:white;
-	cursor: pointer;
-margin-top: 20px;
-	border-radius: 3px;
-}
-
-#add:hover{
-	background-color: violet;
-	color: black;
-	transition: linear 2s ease-in-out;
-}
-::placeholder{
-	color:black;
-	opacity: 0.3;
-}
-
-
-  
-  
- 
-  
-@media only screen and (max-width:1060px) {
-    
-#form input{
+table {
+	border-collapse: collapse;
+	margin: 20px auto;
+	border: 1px solid #ccc;
+	padding: 0;
 	width: 100%;
-}
-  
-	
-	#marks{
-		width: 100%;
-	}
-	body{
-		margin:5px;
-	}
-	
-
-	#add{
-		display: block;
-	}
-	
-		
-	
-		#sub1{
-			display: block;
-			width: 100%;
-			margin: 3px auto;
-		}
-		#marks1{
-			display: block;
-			width:100%;
-			margin:3px auto;
-			
-		}
-	
-		#add{
-			margin: 2px;
-		}
-		
-		#subname {
-			display: flex;
-			
-		}
-		
-
-	
+	table-layout: fixed;
 }
 
+table tr {
+	background-color: #f8f8f8;
+	border: 1px solid #ddd;
+	padding: .35em;
+}
+
+tr:nth-of-type(odd) {
+	background: #eee;
+}
+
+table th, table td {
+	padding: .625em;
+	text-align: center;
+}
+
+table th {
+	font-size: .85em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	background: #3498db;
+	color: white;
+	font-weight: bold;
+}
 
 
 
 #outofmarks {
 	padding: 5px;
-text-align: center;
-}
-
-#outofmarks option{
-text-align: center;
-}
-
-
-  
-  
-
-
-  .main{
-    width:800px;
-    margin: 30px auto;
-    min-height: 100vh;
-    border: 10px solid black;
-    background-color: white;
-    padding-top: 20px;
-	padding-bottom: 20px;
-	border-radius: 10px;
-    
-}
-.container{
-    
-   
-    width: 100%;
-    display: flex;
-   
-    
-   
-}
-
-
-.University{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
-    
-}
-
-h3,h4,h5{
-    font-size: 20px;
-    letter-spacing: 1px;
-}
-
-
-.dismarks{
-  border-top: 2px solid blue;
-  border-bottom: 2px solid blue;
-  
-}
-
-
-h2{
-    text-align: center;
-}
-
-.wrapper{
-	max-width: 800px;
-	width: 100%;
-	background: #fff;
-	margin:10px auto;
-	
-	
-  }
-  
- .display{
-     border: 1px solid black;
-    padding: 10px;
-     margin: 20px;
-    
-     width: 60%;
-     border: 20px double black;
-     box-shadow: 0 0 0 5px sandybrown;
-     border: 2px dotted black;
-    
-     opacity: 0.8;
-     border-radius: 10px;
- 
-     
-     
-
- }
-
- .display .inputfield{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
- }
- .display label{
-   width: 200px;
- }
-
- .display .inputfield label,.display .inputfield input{
-    font-weight: bold;
-	font-size: 17px;
-	margin: 5px;
-  
-     }
- 
-  
-  .wrapper .form{
-	width: 100%;
-    padding: 10px;
-   
-  }
-  
-  .wrapper .form  .inputfield{
-	margin-bottom: 15px;
-	display: flex;
-    align-items: center;
-    justify-content: center;
-    
-  }
- 
-  
-  .wrapper .form .inputfield label{
-	 width:200px;
-	font-weight: bold;
-	 margin-right: 10px;
-    font-size: 16px;
-    display: inline-block;
-    
-  }
-  .wrapper .form .inputfield input{
-    width: 100%;
-    font-size: 16px;
- }
- 
-  
-  #marks{
-    display: inline-block;
-  }
-  
-  #subname{
-    display: inline-block;
-  }
-  
-  
-  
-  
-  input{
-    border: 2px solid black;
-  
-    border-radius: 4px;
-    display: inline-block;
-    width: 200px;
-    font-family: inherit;
-    font-size: 14px;
-    padding: 10px;
-    transition: all 0.3s cubic-bezier(.64,.09,.08,1);
-  }
-
-  table { 
-	
-	border-collapse: collapse; 
-    margin:50px auto;
-    border: 1px solid #ccc;
-      
-      
-        padding: 0;
-        width: 100%;
-        table-layout: fixed;
-    
-  }
-  table tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-	padding: .35em;
-	
-  }
-
-
-tr:nth-of-type(odd) { 
-	background: #eee; 
-	}
-
-  table th,
-  table td {
-    padding: .625em;
 	text-align: center;
-	
-  }
-  
-  table th {
-    font-size: .85em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-   
-	background: #3498db; 
-	color: white; 
-	font-weight: bold; 
-	
+}
+
+#outofmarks option {
+	text-align: center;
+}
+
+
+
+@media only screen and (max-width:1060px) {
+	#form input {
+		width: 100%;
 	}
-
-	
-
-  #add{
-    padding: 8px;
-    border: 2px solid black;
-    background-color: darkorchid;
-    color:white;
-    cursor: pointer;
-  margin-top: 20px;
-    border-radius: 3px;
-  }
-  
-  #add:hover{
-    background-color: violet;
-    color: black;
-    transition: linear 2s ease-in-out;
-  }
-  ::placeholder{
-    color:black;
-    opacity: 0.3;
-  }
-  #outofmarks {
-    padding: 5px;
-  text-align: center;
-  }
-  
-  #outofmarks option{
-  text-align: center;
-  }
-  @media only screen and (max-width:1060px) {
-    
-    #form input{
-      width: 100%;
-    }
-       
-      #marks{
-        width: 100%;
-      }
-      body{
-        margin:5px;
-      }
-      
-    
-      #add{
-        display: block;
-      }
-      
-      
-        #sub1{
-          display: block;
-          width: 100%;
-          margin: 3px auto;
-        }
-        #marks1{
-          display: block;
-          width:100%;
-          margin:3px auto;
-          
-        }
-      
-        #add{
-          margin: 2px;
-        }
-        
-        #subname {
-          display: flex;
-          
-        }
-        
-    
-      
-    }
-    
+	#marks {
+		width: 100%;
+	}
+	body {
+		margin: 5px;
+	}
+	#add {
+		display: block;
+	}
+	#sub1 {
+		display: block;
+		width: 100%;
+		margin: 3px auto;
+	}
+	#marks1 {
+		display: block;
+		width: 100%;
+		margin: 3px auto;
+	}
+	#add {
+		margin: 2px;
+	}
+	#subname {
+		display: flex;
+	}
+}
 
 /* 
 Max width before this PARTICULAR table gets nasty
@@ -438,51 +281,43 @@ This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
 
+@media (max-width:800px) {
+	.main {
+		width: 100%;
+	}
+	.display {
+		width: fit-content;
+	}
+	.wrapper .form .inputfield {
+		flex-direction: column;
+		align-items: flex-start;
+		width: 100%;
+	}
+	.wrapper .form .inputfield label {
+		margin-bottom: 5px;
+		display: inline-block;
+		width: fit-content;
+	}
+	.wrapper .form .inputfield.terms {
+		flex-direction: row;
+	}
+	.container {
+		width: 100%;
 
-    
-      @media (max-width:800px) {
+	}
+	#form input {
+		width: 100%;
+	}
+}
 
-        .main{
-          width: 100%;
-        }
-        .display{
-          width: fit-content;
-        }
-        .wrapper .form .inputfield{
-          flex-direction: column;
-          align-items: flex-start;
-          width: 80%;
-        }
-        .wrapper .form .inputfield label{
-          margin-bottom: 5px;
-          display: inline-block;
-          width: fit-content;
-        }
-        .wrapper .form .inputfield.terms{
-          flex-direction: row;
-        }
-       .container{
-         width: 100%;
-        
-       }
-       #form input{
-        width: 100%;
-      }
-       
-      } 
-
-
-    
-    @media (max-width:400px) {
-     .container{
-       display: flex;
-       flex-direction: column;
-     } 
-     .University{
-       display: flex;
-     }
-    }
-    
-      
-     
-     
+@media (max-width:400px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	.University {
+		display: flex;
+	}
+}

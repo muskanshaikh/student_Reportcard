@@ -10,17 +10,9 @@ window.addEventListener('load', () => {
   console.log(detailsstudent[0].subject[0].marks);
   let sname = detailsstudent[0].name;
   let rno = detailsstudent[0].rollno;
-
-  console.log(rno);
-
   document.getElementById('newname').value = sname;
   document.getElementById('rno').value = rno;
-
-  
   updatetable();
-
-  // calcsum()
-  // localStorage.clear();
 });
 
 var sum = 0;
@@ -28,6 +20,7 @@ var sum = 0;
 var newopt = 0;
 
 var i = 0;
+var flag=1;
 /*For displaying report card in table */
 function updatetable() {
   let marks = JSON.parse(localStorage.getItem('Submarks'));
@@ -71,7 +64,7 @@ function updatetable() {
 
     parent.appendChild(childdiv);
     i++;
-    flag = 1;
+   
     sum = parseFloat(sum) + parseFloat(markslast);
     var txt1 = eval(parseFloat(sum));
 
@@ -95,10 +88,10 @@ function updatetable() {
       document.getElementById('percent').value = txt2.toFixed(2) + '%';
 
       if (txt2 > 75) {
-        document.getElementById('grade').value = 'Pass with Distinction';
+        document.getElementById('grade').value = 'Distinction';
         return;
       } else if (txt2 > 60 && txt2 < 75) {
-        document.getElementById('grade').value = 'Pass with first class ';
+        document.getElementById('grade').value = 'first class ';
         return;
       } else if (txt2 > 35 && txt2 < 60) {
         document.getElementById('grade').value = 'Pass ';
@@ -110,4 +103,3 @@ function updatetable() {
     }
   });
 }
-
