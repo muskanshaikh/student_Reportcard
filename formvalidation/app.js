@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
   document.getElementById('rno').value = rno;
   updatetable();
 
-localstorage.clear();
+
 });
 
 var sum = 0;
@@ -105,3 +105,4 @@ function updatetable() {
     }
   });
 }
+localstorage.clear();
