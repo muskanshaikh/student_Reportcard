@@ -10,7 +10,6 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
 
   checkInputs();
-location.reload();
 });
 
 var sum = 0;
