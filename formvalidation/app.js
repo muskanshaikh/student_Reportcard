@@ -13,7 +13,7 @@ window.addEventListener('load', () => {
   document.getElementById('newname').value = sname;
   document.getElementById('rno').value = rno;
   updatetable();
-
+localstorage.clear();
 
 });
 
@@ -105,4 +105,4 @@ function updatetable() {
     }
   });
 }
-localstorage.clear();
+
